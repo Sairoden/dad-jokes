@@ -3,6 +3,19 @@
   height: 80%;
   width: 80%;
 
+  &-title {
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 0.6rem;
+    margin: 2rem;
+
+    span {
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+  }
+
   &-sidebar {
     align-items: center;
     background: #9575cd;
@@ -11,6 +24,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     width: 30%;
     z-index: 2;
 
@@ -18,25 +32,19 @@
       border-radius: 50%;
       box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
       width: 50%;
-    }
-  }
 
-  &-title {
-    color: #fff;
-    font-size: 4rem;
-    font-weight: 300;
-    letter-spacing: 0.6rem;
-    margin: 1rem;
-
-    span {
-      font-weight: 700;
-      letter-spacing: 0;
+      &:hover {
+        animation-delay: 0s;
+        animation-duration: 5s;
+        animation-name: shake-slow;
+        animation-timing-function: ease-in-out;
+      }
     }
   }
 
   &-jokes {
     align-self: center;
-    background: #fff;
+    background: white;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
     height: 90%;
     overflow: scroll;
