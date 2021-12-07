@@ -11,10 +11,16 @@ class JokeList extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { jokes: [] };
+    this.state = {
+      jokes: JSON.parse(window.localStorage.getItem("jokes") || "[]"),
+    };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    if (this.state.jokes.length === 0) this.getJokes();
+  }
+
+  async getJokes() {
     try {
       // Load Jokes
       let jokes = [];
@@ -26,8 +32,9 @@ class JokeList extends Component {
       }
 
       this.setState({ jokes: jokes });
+      window.localStorage.setItem("jokes", JSON.stringify(jokes));
     } catch (err) {
-      console.error("Oops something went wrong! 😣😣");
+      console.error("Oops something went wrong! 😣😣", err.message);
     }
   }
 
