@@ -36,6 +36,13 @@
     box-shadow: 0 10px 38px rgba(0, 0, 0, 0.2), 0 10px 12px rgba(0, 0, 0, 0.1);
     font-size: 3rem;
     margin-left: auto;
+
+    &:hover {
+      animation-delay: 0s;
+      animation-duration: 0.7s;
+      animation-name: spin;
+      animation-timing-function: ease-in-out;
+    }
   }
 }
 
@@ -45,5 +52,72 @@
     cursor: pointer;
     font-size: 1.5em;
     margin: 10px;
+    transition: all 0.3s;
+  }
+
+  &-up {
+    &:hover {
+      animation-duration: 0.7s;
+      animation-name: move-up;
+      animation-timing-function: ease-out;
+      color: #8bc34a;
+    }
+  }
+
+  &-down {
+    &:hover {
+      animation-duration: 0.7s;
+      animation-name: move-down;
+      animation-timing-function: ease-out;
+      color: #f44336;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  30% {
+    transform: rotate(20deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  80% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes move-up {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+
+  25%,
+  75% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes move-down {
+  25%,
+  75% {
+    transform: translateY(3px);
+  }
+
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
   }
 }
