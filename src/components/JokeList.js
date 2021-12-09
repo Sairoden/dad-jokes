@@ -92,7 +92,7 @@ class JokeList extends Component {
             alt="Dad Joke"
           />
           <button onClick={this.handleClick} className="JokeList-getmore">
-            New Jokes
+            Fetch Jokes
           </button>
         </div>
 
